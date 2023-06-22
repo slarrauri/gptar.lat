@@ -104,8 +104,8 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                 onChange={(event) => setValue(event.currentTarget.value)}
                 formNoValidate
               />
-              <Button type="Enviar" loading={submitting}>
-                Save
+              <Button type="submit" loading={submitting}>
+                Guardar
               </Button>
             </Flex>
           </form>
@@ -116,7 +116,7 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                   href="https://platform.openai.com/account/api-keys"
                   target="_blank"
                 >
-                  Get your OpenAI API key
+                  Obten tu API key
                 </Anchor>
               </Text>
             </List.Item>
@@ -280,8 +280,8 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                 onChange={(event) => setBase(event.currentTarget.value)}
                 formNoValidate
               />
-              <Button type="Enviar" loading={submitting}>
-                Save
+              <Button type="submit" loading={submitting}>
+                Guardar
               </Button>
             </Flex>
           </form>
@@ -328,8 +328,8 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                 onChange={(event) => setVersion(event.currentTarget.value)}
                 formNoValidate
               />
-              <Button type="Enviar" loading={submitting}>
-                Save
+              <Button type="submit" loading={submitting}>
+                Guardar
               </Button>
             </Flex>
           </form>
