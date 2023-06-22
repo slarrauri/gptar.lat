@@ -88,21 +88,21 @@ export function IndexRoute() {
 
 const features = [
   {
-    icon: IconCurrencyDollar,
-    title: "Free and open source",
-    description:
-      "This app is provided for free and the source code is available on GitHub.",
+  icon: IconCurrencyDollar,
+  title: "Integra ChatGPT en tu empresa",
+  description:
+  "¡Aprovecha la potencia de ChatGPT en tu negocio a bajos costos!",
   },
   {
-    icon: IconLock,
-    title: "Privacy focused",
-    description:
-      "No tracking, no cookies, no bullshit. All your data is stored locally.",
+  icon: IconLock,
+  title: "Enfoque en la privacidad",
+  description:
+  "Sin rastreo, sin cookies, sin tonterías. Todos tus datos se almacenan localmente.",
   },
   {
-    icon: IconNorthStar,
-    title: "Best experience",
-    description:
-      "Crafted with love and care to provide the best experience possible.",
+  icon: IconNorthStar,
+  title: "Potentes integraciones empresariales",
+  description:
+  "¿Deseas integrar el poder de ChatGPT en tu negocio?",
   },
-];
+  ];
