@@ -19,12 +19,12 @@ export function DeleteAllDataModal({ onOpen }: { onOpen: () => void }) {
       <Modal
         opened={opened}
         onClose={close}
-        title="Delete All Data"
+        title="Borrar Todo"
         size="md"
         withinPortal
       >
         <Stack>
-          <Text size="sm">Are you sure you want to delete your data?</Text>
+          <Text size="sm">Estas seguro que quiere borrar los datos?</Text>
           <Button
             onClick={async () => {
               await db.delete();

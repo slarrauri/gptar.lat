@@ -29,7 +29,7 @@ export function DeleteChatModal({
   return (
     <>
       {cloneElement(children, { onClick: open })}
-      <Modal opened={opened} onClose={close} title="Delete Chat">
+      <Modal opened={opened} onClose={close} title="Borrar Chat">
         <form
           onSubmit={async (event) => {
             try {
@@ -43,22 +43,22 @@ export function DeleteChatModal({
               close();
 
               notifications.show({
-                title: "Deleted",
-                message: "Chat deleted.",
+                title: "Borrar",
+                message: "Chat Borrado.",
               });
             } catch (error: any) {
               if (error.toJSON().message === "Network Error") {
                 notifications.show({
                   title: "Error",
                   color: "red",
-                  message: "No internet connection.",
+                  message: "Sin Conexion a Internet.",
                 });
               } else {
                 notifications.show({
                   title: "Error",
                   color: "red",
                   message:
-                    "Can't remove chat. Please refresh the page and try again.",
+                    "No se puede acceder al char, por favor refresca la pagina he intenta nuevamente.",
                 });
               }
             } finally {
@@ -68,7 +68,7 @@ export function DeleteChatModal({
         >
           <Stack>
             <Text size="sm">Are you sure you want to delete this chat?</Text>
-            <Button type="submit" color="red" loading={submitting}>
+            <Button type="Enviar" color="red" loading={submitting}>
               Delete
             </Button>
           </Stack>

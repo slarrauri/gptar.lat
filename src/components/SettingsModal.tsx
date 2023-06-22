@@ -58,7 +58,7 @@ export function SettingsModal({ children }: { children: ReactElement }) {
   return (
     <>
       {cloneElement(children, { onClick: open })}
-      <Modal opened={opened} onClose={close} title="Settings" size="lg">
+      <Modal opened={opened} onClose={close} title="Configuracion" size="lg">
         <Stack>
           <form
             onSubmit={async (event) => {
@@ -71,15 +71,15 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                   console.log(apiKey);
                 });
                 notifications.show({
-                  title: "Saved",
-                  message: "Your OpenAI Key has been saved.",
+                  title: "Guardado",
+                  message: "Su Api Key ha sido guardado.",
                 });
               } catch (error: any) {
                 if (error.toJSON().message === "Network Error") {
                   notifications.show({
                     title: "Error",
                     color: "red",
-                    message: "No internet connection.",
+                    message: "Sin conexcion a internet",
                   });
                 }
                 const message = error.response?.data?.error?.message;
@@ -104,7 +104,7 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                 onChange={(event) => setValue(event.currentTarget.value)}
                 formNoValidate
               />
-              <Button type="submit" loading={submitting}>
+              <Button type="Enviar" loading={submitting}>
                 Save
               </Button>
             </Flex>
@@ -122,13 +122,12 @@ export function SettingsModal({ children }: { children: ReactElement }) {
             </List.Item>
             <List.Item>
               <Text size="sm" color="dimmed">
-                The API Key is stored locally on your browser and never sent
-                anywhere else.
+                Su API Key es guardada en el navegador y nunca se envia a ningun lado.
               </Text>
             </List.Item>
           </List>
           <Select
-            label="OpenAI Type"
+            label="Tipo OpenAI"
             value={type}
             onChange={async (value) => {
               setSubmitting(true);
@@ -137,15 +136,15 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                   openAiApiType: value ?? 'openai',
                 });
                 notifications.show({
-                  title: "Saved",
-                  message: "Your OpenAI Type has been saved.",
+                  title: "Guardado",
+                  message: "Su OpenAI key ha sido guardada.",
                 });
               } catch (error: any) {
                 if (error.toJSON().message === "Network Error") {
                   notifications.show({
                     title: "Error",
                     color: "red",
-                    message: "No internet connection.",
+                    message: "Sin conexion a Internet.",
                   });
                 }
                 const message = error.response?.data?.error?.message;
@@ -164,7 +163,7 @@ export function SettingsModal({ children }: { children: ReactElement }) {
             data={[{ "value": "openai", "label": "OpenAI"}, { "value": "custom", "label": "Custom (e.g. Azure OpenAI)"}]}
           />
           <Select
-            label="OpenAI Model (OpenAI Only)"
+            label="Modelo OpenAI (Solo OpenAI)"
             value={model}
             onChange={async (value) => {
               setSubmitting(true);
@@ -173,15 +172,15 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                   openAiModel: value ?? undefined,
                 });
                 notifications.show({
-                  title: "Saved",
-                  message: "Your OpenAI Model has been saved.",
+                  title: "Guardado",
+                  message: "SU Modelo ha sido guardado.",
                 });
               } catch (error: any) {
                 if (error.toJSON().message === "Network Error") {
                   notifications.show({
                     title: "Error",
                     color: "red",
-                    message: "No internet connection.",
+                    message: "Sin Conexcion a Internet.",
                   });
                 }
                 const message = error.response?.data?.error?.message;
@@ -200,11 +199,10 @@ export function SettingsModal({ children }: { children: ReactElement }) {
             data={config.availableModels}
           />
           <Alert color="orange" title="Warning">
-            The displayed cost was not updated yet to reflect the costs for each
-            model. Right now it will always show the cost for GPT-3.5 on OpenAI.
+          El costo mostrado aún no ha sido actualizado para reflejar los costos de cada modelo. En este momento, siempre mostrará el costo para GPT-3.5 en OpenAI.
           </Alert>
           <Select
-            label="OpenAI Auth (Custom Only)"
+            label="OpenAI Auth (Solo Custom)"
             value={auth}
             onChange={async (value) => {
               setSubmitting(true);
@@ -213,15 +211,15 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                   openAiApiAuth: value ?? 'none',
                 });
                 notifications.show({
-                  title: "Saved",
-                  message: "Your OpenAI Auth has been saved.",
+                  title: "Guardado",
+                  message: "Su OpenAI Auth ha sido guardada.",
                 });
               } catch (error: any) {
                 if (error.toJSON().message === "Network Error") {
                   notifications.show({
                     title: "Error",
                     color: "red",
-                    message: "No internet connection.",
+                    message: "Sin Conexcion a Internet.",
                   });
                 }
                 const message = error.response?.data?.error?.message;

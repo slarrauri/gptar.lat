@@ -27,7 +27,7 @@ export function CreatePromptModal({ content }: { content?: string }) {
   return (
     <>
       {content ? (
-        <Tooltip label="Save Prompt" position="left">
+        <Tooltip label="Guardar" position="left">
           <ActionIcon onClick={open}>
             <IconPlaylistAdd opacity={0.5} size={20} />
           </ActionIcon>
@@ -37,7 +37,7 @@ export function CreatePromptModal({ content }: { content?: string }) {
           New Prompt
         </Button>
       )}
-      <Modal opened={opened} onClose={close} title="Create Prompt" size="lg">
+      <Modal opened={opened} onClose={close} title="Crear Prompt" size="lg">
         <form
           onSubmit={async (event) => {
             try {
@@ -51,8 +51,8 @@ export function CreatePromptModal({ content }: { content?: string }) {
                 createdAt: new Date(),
               });
               notifications.show({
-                title: "Saved",
-                message: "Prompt created",
+                title: "Guardado",
+                message: "Creado",
               });
               close();
             } catch (error: any) {
@@ -60,7 +60,7 @@ export function CreatePromptModal({ content }: { content?: string }) {
                 notifications.show({
                   title: "Error",
                   color: "red",
-                  message: "No internet connection.",
+                  message: "Sin Conexcion a Internet.",
                 });
               }
               const message = error.response?.data?.error?.message;
@@ -78,21 +78,21 @@ export function CreatePromptModal({ content }: { content?: string }) {
         >
           <Stack>
             <TextInput
-              label="Title"
+              label="Titulo"
               value={title}
               onChange={(event) => setTitle(event.currentTarget.value)}
               formNoValidate
               data-autofocus
             />
             <Textarea
-              placeholder="Content"
+              placeholder="Contenido"
               autosize
               minRows={5}
               maxRows={10}
               value={value}
               onChange={(event) => setValue(event.currentTarget.value)}
             />
-            <Button type="submit" loading={submitting}>
+            <Button type="Enviar" loading={submitting}>
               Save
             </Button>
           </Stack>

@@ -163,7 +163,7 @@ export function Layout() {
             <TextInput
               variant="unstyled"
               radius={0}
-              placeholder="Search"
+              placeholder="Buscar"
               value={search}
               onChange={(event) =>
                 setSearch(event.currentTarget.value.toLowerCase())
@@ -206,7 +206,7 @@ export function Layout() {
               )}
               {config.allowSettingsModal && (
                 <SettingsModal>
-                  <Tooltip label="Settings">
+                  <Tooltip label="Configuracion">
                     <ActionIcon sx={{ flex: 1 }} size="xl">
                       <IconSettings size={20} />
                     </ActionIcon>
@@ -215,58 +215,16 @@ export function Layout() {
               )}
               {config.allowDatabaseModal && (
                 <DatabaseModal>
-                  <Tooltip label="Database">
+                  <Tooltip label="Base de Datos">
                     <ActionIcon sx={{ flex: 1 }} size="xl">
                       <IconDatabase size={20} />
                     </ActionIcon>
                   </Tooltip>
                 </DatabaseModal>
               )}
-              <Tooltip label="Source Code">
-                <ActionIcon
-                  component="a"
-                  href="https://github.com/deiucanta/chatpad"
-                  target="_blank"
-                  sx={{ flex: 1 }}
-                  size="xl"
-                >
-                  <IconBrandGithub size={20} />
-                </ActionIcon>
-              </Tooltip>
-              {config.showTwitterLink && (
-                <Tooltip label="Follow on Twitter">
-                  <ActionIcon
-                    component="a"
-                    href="https://twitter.com/deiucanta"
-                    target="_blank"
-                    sx={{ flex: 1 }}
-                    size="xl"
-                  >
-                    <IconBrandTwitter size={20} />
-                  </ActionIcon>
-                </Tooltip>
-              )}
-              {config.showFeedbackLink && (
-                <Tooltip label="Give Feedback">
-                  <ActionIcon
-                    component="a"
-                    href="https://feedback.chatpad.ai"
-                    onClick={(event) => {
-                      if (window.todesktop) {
-                        event.preventDefault();
-                        window.todesktop.contents.openUrlInBrowser(
-                          "https://feedback.chatpad.ai"
-                        );
-                      }
-                    }}
-                    target="_blank"
-                    sx={{ flex: 1 }}
-                    size="xl"
-                  >
-                    <IconMessage size={20} />
-                  </ActionIcon>
-                </Tooltip>
-              )}
+             
+             
+            
             </Center>
           </Navbar.Section>
         </Navbar>

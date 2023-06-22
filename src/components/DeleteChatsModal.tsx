@@ -19,7 +19,7 @@ export function DeleteChatsModal({ onOpen }: { onOpen: () => void }) {
       <Modal
         opened={opened}
         onClose={close}
-        title="Delete Chats"
+        title="Borrar Chats"
         size="md"
         withinPortal
       >

@@ -22,7 +22,7 @@ export function EditChatModal({
   return (
     <>
       {cloneElement(children, { onClick: open })}
-      <Modal opened={opened} onClose={close} title="Edit Chat" withinPortal>
+      <Modal opened={opened} onClose={close} title="Editar Chat" withinPortal>
         <form
           onSubmit={async (event) => {
             try {
@@ -32,7 +32,7 @@ export function EditChatModal({
                 chat.description = value;
               });
               notifications.show({
-                title: "Saved",
+                title: "Guardado",
                 message: "",
               });
               close();
@@ -41,7 +41,7 @@ export function EditChatModal({
                 notifications.show({
                   title: "Error",
                   color: "red",
-                  message: "No internet connection.",
+                  message: "Sin Conexion a Internet.",
                 });
               }
               const message = error.response?.data?.error?.message;
@@ -65,7 +65,7 @@ export function EditChatModal({
               formNoValidate
               data-autofocus
             />
-            <Button type="submit" loading={submitting}>
+            <Button type="Enviar" loading={submitting}>
               Save
             </Button>
           </Stack>

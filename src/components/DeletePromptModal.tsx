@@ -23,7 +23,7 @@ export function DeletePromptModal({ prompt }: { prompt: Prompt }) {
 
   return (
     <>
-      <Modal opened={opened} onClose={close} title="Delete Prompt" size="md">
+      <Modal opened={opened} onClose={close} title="Borrar Prompt" size="md">
         <form
           onSubmit={async (event) => {
             try {
@@ -33,22 +33,22 @@ export function DeletePromptModal({ prompt }: { prompt: Prompt }) {
               close();
 
               notifications.show({
-                title: "Deleted",
-                message: "Chat deleted.",
+                title: "Borrado",
+                message: "Chat Borrado.",
               });
             } catch (error: any) {
               if (error.toJSON().message === "Network Error") {
                 notifications.show({
                   title: "Error",
                   color: "red",
-                  message: "No internet connection.",
+                  message: "Sin Conexcion a Internet.",
                 });
               } else {
                 notifications.show({
                   title: "Error",
                   color: "red",
                   message:
-                    "Can't remove chat. Please refresh the page and try again.",
+                  "No se puede acceder al char, por favor refresca la pagina he intenta nuevamente.",
                 });
               }
             } finally {

@@ -55,7 +55,7 @@ export function MessageItem({ message }: { message: Message }) {
                       <CopyButton value={String(props.children)}>
                         {({ copied, copy }) => (
                           <Tooltip
-                            label={copied ? "Copied" : "Copy"}
+                            label={copied ? "Copiado" : "Copiar"}
                             position="left"
                           >
                             <ActionIcon
@@ -74,7 +74,7 @@ export function MessageItem({ message }: { message: Message }) {
             {message.role === "assistant" && (
               <Box>
                 <Text size="sm" color="dimmed">
-                  {wordCount} words
+                  {wordCount} palabras
                 </Text>
               </Box>
             )}
@@ -83,14 +83,14 @@ export function MessageItem({ message }: { message: Message }) {
             <CreatePromptModal content={message.content} />
             <CopyButton value={message.content}>
               {({ copied, copy }) => (
-                <Tooltip label={copied ? "Copied" : "Copy"} position="left">
+                <Tooltip label={copied ? "Copiado" : "Copy"} position="left">
                   <ActionIcon onClick={copy}>
                     <IconCopy opacity={0.5} size={20} />
                   </ActionIcon>
                 </Tooltip>
               )}
             </CopyButton>
-            {/* <Tooltip label={`${wordCount} words`} position="left">
+            {/* <Tooltip label={`${wordCount} palabras`} position="left">
               <ActionIcon>
                 <IconInfoCircle opacity={0.5} size={20} />
               </ActionIcon>

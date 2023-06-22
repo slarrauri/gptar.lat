@@ -26,7 +26,7 @@ export function EditPromptModal({ prompt }: { prompt: Prompt }) {
 
   return (
     <>
-      <Modal opened={opened} onClose={close} title="Edit Prompt" size="lg">
+      <Modal opened={opened} onClose={close} title="Editar Prompt" size="lg">
         <form
           onSubmit={async (event) => {
             try {
@@ -37,7 +37,7 @@ export function EditPromptModal({ prompt }: { prompt: Prompt }) {
                 chat.content = value;
               });
               notifications.show({
-                title: "Saved",
+                title: "Guardado",
                 message: "Prompt updated",
               });
             } catch (error: any) {
@@ -45,7 +45,7 @@ export function EditPromptModal({ prompt }: { prompt: Prompt }) {
                 notifications.show({
                   title: "Error",
                   color: "red",
-                  message: "No internet connection.",
+                  message: "Sin Conexion a Internet.",
                 });
               }
               const message = error.response?.data?.error?.message;
@@ -63,27 +63,27 @@ export function EditPromptModal({ prompt }: { prompt: Prompt }) {
         >
           <Stack>
             <TextInput
-              label="Title"
+              label="Titulo"
               value={title}
               onChange={(event) => setTitle(event.currentTarget.value)}
               formNoValidate
               data-autofocus
             />
             <Textarea
-              label="Content"
+              label="Contenido"
               autosize
               minRows={5}
               maxRows={10}
               value={value}
               onChange={(event) => setValue(event.currentTarget.value)}
             />
-            <Button type="submit" loading={submitting}>
+            <Button type="Enviar" loading={submitting}>
               Save
             </Button>
           </Stack>
         </form>
       </Modal>
-      <Tooltip label="Edit Prompt">
+      <Tooltip label="Editar Prompt">
         <ActionIcon size="lg" onClick={open}>
           <IconPencil size={20} />
         </ActionIcon>

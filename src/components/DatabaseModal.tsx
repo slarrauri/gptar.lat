@@ -89,8 +89,8 @@ export function DatabaseModal({ children }: { children: ReactElement }) {
                   "application/json"
                 );
                 notifications.show({
-                  title: "Exporting Data",
-                  message: "Your data is being exported.",
+                  title: "Exportando Datos",
+                  message: "Tus datos estan siendo exportados.",
                 });
               }}
             >
@@ -110,15 +110,15 @@ export function DatabaseModal({ children }: { children: ReactElement }) {
                 })
                   .then(() => {
                     notifications.show({
-                      title: "Importing data",
-                      message: "Your data is being imported.",
+                      title: "Importando Datos",
+                      message: "Tus Datos estan siendo importados",
                     });
                   })
                   .catch((error) => {
                     notifications.show({
                       title: "Error",
                       color: "red",
-                      message: "The file you selected is invalid",
+                      message: "El Archivo es invalido",
                     });
                   });
               }}
