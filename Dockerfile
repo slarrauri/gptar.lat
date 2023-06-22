@@ -10,5 +10,5 @@ COPY ./dist /usr/share/nginx/html
 ENV NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx/conf.d
 
 # Default env variables
-ENV PORT=80
+ENV PORT=8089
 ENV HOST=0.0.0.0
