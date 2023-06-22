@@ -55,13 +55,13 @@ export function ChatRoute() {
 
   const getSystemMessage = () => {
     const message: string[] = [];
-    if (writingCharacter) message.push(`You are ${writingCharacter}.`);
-    if (writingTone) message.push(`Respond in ${writingTone} tone.`);
-    if (writingStyle) message.push(`Respond in ${writingStyle} style.`);
+    if (writingCharacter) message.push(`Tu eres ${writingCharacter}.`);
+    if (writingTone) message.push(`Responde con el tono ${writingTone}`);
+    if (writingStyle) message.push(`Responde con el estilo ${writingStyle}.`);
     if (writingFormat) message.push(writingFormat);
     if (message.length === 0)
       message.push(
-        "You are ChatGPT, a large language model trained by OpenAI."
+        "Eres ChatGPT, un modelo de lenguaje entrenado por OpenAI."
       );
     return message.join(" ");
   };
@@ -73,7 +73,7 @@ export function ChatRoute() {
       notifications.show({
         title: "Error",
         color: "red",
-        message: "chatId is not defined. Please create a chat to get started.",
+        message: "Chat no definido. Cree un chat para comenzar.",
       });
       return;
     }
@@ -82,7 +82,7 @@ export function ChatRoute() {
       notifications.show({
         title: "Error",
         color: "red",
-        message: "OpenAI API Key is not defined. Please set your API Key",
+        message: "OpenAI API key no esta definido. Pro favor ingrese su API key",
       });
       return;
     }
@@ -127,7 +127,7 @@ export function ChatRoute() {
 
       setSubmitting(false);
 
-      if (chat?.description === "New Chat") {
+      if (chat?.description === "Nuevo Chat") {
         const messages = await db.messages
           .where({ chatId })
           .sortBy("createdAt");
@@ -143,7 +143,7 @@ export function ChatRoute() {
           {
             role: "user",
             content:
-              "What would be a short and relevant title for this chat ? You must strictly answer with only the title, no other text is allowed.",
+            "¿Cuál sería un título corto y relevante para este chat? Debes responder estrictamente solo con el título, no se permite ningún otro texto."
           },
         ]);
         const chatDescription =
@@ -151,7 +151,7 @@ export function ChatRoute() {
 
         if (createChatDescription.data.usage) {
           await db.chats.where({ id: chatId }).modify((chat) => {
-            chat.description = chatDescription ?? "New Chat";
+            chat.description = chatDescription ?? "Nuevo Chat";
             if (chat.totalTokens) {
               chat.totalTokens +=
                 createChatDescription.data.usage!.total_tokens;
@@ -166,7 +166,7 @@ export function ChatRoute() {
         notifications.show({
           title: "Error",
           color: "red",
-          message: "No internet connection.",
+          message: "Sin Conexcion a Internet.",
         });
       }
       const message = error.response?.data?.error?.message;
@@ -264,7 +264,7 @@ export function ChatRoute() {
                 value={writingCharacter}
                 onChange={setWritingCharacter}
                 data={config.writingCharacters}
-                placeholder="Character"
+                placeholder="Personaje"
                 variant="filled"
                 searchable
                 clearable
@@ -274,7 +274,7 @@ export function ChatRoute() {
                 value={writingTone}
                 onChange={setWritingTone}
                 data={config.writingTones}
-                placeholder="Tone"
+                placeholder="Tono"
                 variant="filled"
                 searchable
                 clearable
@@ -284,7 +284,7 @@ export function ChatRoute() {
                 value={writingStyle}
                 onChange={setWritingStyle}
                 data={config.writingStyles}
-                placeholder="Style"
+                placeholder="Estilo"
                 variant="filled"
                 searchable
                 clearable
@@ -294,7 +294,7 @@ export function ChatRoute() {
                 value={writingFormat}
                 onChange={setWritingFormat}
                 data={config.writingFormats}
-                placeholder="Format"
+                placeholder="Formato"
                 variant="filled"
                 searchable
                 clearable
@@ -306,7 +306,7 @@ export function ChatRoute() {
             <Textarea
               key={chatId}
               sx={{ flex: 1 }}
-              placeholder="Your message here..."
+              placeholder="TU mensaje aqui"
               autosize
               autoFocus
               disabled={submitting}

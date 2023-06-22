@@ -248,14 +248,14 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                 });
                 notifications.show({
                   title: "Saved",
-                  message: "Your OpenAI Base has been saved.",
+                  message: "Su OpenAI Base ha sido guardada.",
                 });
               } catch (error: any) {
                 if (error.toJSON().message === "Network Error") {
                   notifications.show({
                     title: "Error",
                     color: "red",
-                    message: "No internet connection.",
+                    message: "Sin Conexcion a Internet.",
                   });
                 }
                 const message = error.response?.data?.error?.message;
@@ -280,7 +280,7 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                 onChange={(event) => setBase(event.currentTarget.value)}
                 formNoValidate
               />
-              <Button type="submit" loading={submitting}>
+              <Button type="Enviar" loading={submitting}>
                 Save
               </Button>
             </Flex>
@@ -295,15 +295,15 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                   console.log(row);
                 });
                 notifications.show({
-                  title: "Saved",
-                  message: "Your OpenAI Version has been saved.",
+                  title: "Guardado",
+                  message: "Su version de OpenAI se ha guardado.",
                 });
               } catch (error: any) {
                 if (error.toJSON().message === "Network Error") {
                   notifications.show({
                     title: "Error",
                     color: "red",
-                    message: "No internet connection.",
+                    message: "Sin Conexcion oa Internet.",
                   });
                 }
                 const message = error.response?.data?.error?.message;
@@ -328,7 +328,7 @@ export function SettingsModal({ children }: { children: ReactElement }) {
                 onChange={(event) => setVersion(event.currentTarget.value)}
                 formNoValidate
               />
-              <Button type="submit" loading={submitting}>
+              <Button type="Enviar" loading={submitting}>
                 Save
               </Button>
             </Flex>
