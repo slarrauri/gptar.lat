@@ -57,14 +57,14 @@ export function DeletePromptModal({ prompt }: { prompt: Prompt }) {
           }}
         >
           <Stack>
-            <Text size="sm">Are you sure you want to delete this prompt?</Text>
+            <Text size="sm">Esta seguroq ue quiere borrar los Promots?</Text>
             <Button type="submit" color="red" loading={submitting}>
-              Delete
+              Borrar
             </Button>
           </Stack>
         </form>
       </Modal>
-      <Tooltip label="Delete Prompt">
+      <Tooltip label="Borrar Prompt">
         <ActionIcon color="red" size="lg" onClick={open}>
           <IconTrash size={20} />
         </ActionIcon>

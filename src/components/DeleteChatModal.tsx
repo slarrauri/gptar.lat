@@ -67,9 +67,9 @@ export function DeleteChatModal({
           }}
         >
           <Stack>
-            <Text size="sm">Are you sure you want to delete this chat?</Text>
-            <Button type="Enviar" color="red" loading={submitting}>
-              Delete
+            <Text size="sm">Esta Seguro que quiere borrar el Chat?</Text>
+            <Button type="submit" color="red" loading={submitting}>
+              Borrar
             </Button>
           </Stack>
         </form>

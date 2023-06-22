@@ -77,8 +77,8 @@ export function EditPromptModal({ prompt }: { prompt: Prompt }) {
               value={value}
               onChange={(event) => setValue(event.currentTarget.value)}
             />
-            <Button type="Enviar" loading={submitting}>
-              Save
+            <Button type="submit" loading={submitting}>
+              Guardar
             </Button>
           </Stack>
         </form>

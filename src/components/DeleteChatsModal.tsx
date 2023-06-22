@@ -14,7 +14,7 @@ export function DeleteChatsModal({ onOpen }: { onOpen: () => void }) {
         color="red"
         leftIcon={<IconTrash size={20} />}
       >
-        Delete Chats
+        Borrar Chats
       </Button>
       <Modal
         opened={opened}
@@ -24,7 +24,7 @@ export function DeleteChatsModal({ onOpen }: { onOpen: () => void }) {
         withinPortal
       >
         <Stack>
-          <Text size="sm">Are you sure you want to delete your chats?</Text>
+          <Text size="sm">Esta seguroq ue quiere borrar los chats?</Text>
           <Button
             onClick={async () => {
               await db.chats.clear();
@@ -34,7 +34,7 @@ export function DeleteChatsModal({ onOpen }: { onOpen: () => void }) {
             }}
             color="red"
           >
-            Delete
+            Borrar
           </Button>
         </Stack>
       </Modal>

@@ -65,8 +65,8 @@ export function EditChatModal({
               formNoValidate
               data-autofocus
             />
-            <Button type="Enviar" loading={submitting}>
-              Save
+            <Button type="submit" loading={submitting}>
+              Guardar
             </Button>
           </Stack>
         </form>
