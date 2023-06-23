@@ -137,7 +137,7 @@ export function Layout() {
                     const id = nanoid();
                     db.chats.add({
                       id,
-                      description: "New Chat",
+                      description: "Nuevo Chat",
                       totalTokens: 0,
                       createdAt: new Date(),
                     });
